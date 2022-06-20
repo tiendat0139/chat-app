@@ -1,0 +1,159 @@
+.chat-page{
+    background-color: #f5f3fb;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .chat-area{
+        width: calc(100vw - 140px);
+        height: calc(100vh - 100px);
+        padding: 14px 14px;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.1);
+        border-radius: 30px;
+    }
+    .side-bar{
+        background-color: #4749a1;
+        height: 100%;
+        border-radius: 20px;
+    }
+    .person-onl{
+        background-color: #f9f9fc;
+        .header{
+            .room-name{
+                font-size: 24px;
+                font-weight: 600;
+            }
+            .search-icon{
+                margin-right: 20px;
+                display: flex;
+                align-items: center;
+                background-color: #efeff5;
+                padding: 0 10px;
+                border-radius: 50%;
+            }
+        }
+        .sub-header{
+            display: block;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #4749a1;
+            position: relative;
+        }
+        .sub-header::after{
+            content: "";
+            width: 30px;
+            height: 4px;
+            background-color: #4749a1;
+            border-radius: 3px;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+        .person-onl_dis{
+            margin-top: 20px;
+            .person-onl_item{
+                margin-top: 20px;
+            }
+            .person-onl_list{
+                list-style-type: none;
+                padding: 0 24px 0 0;
+            }
+            .person-onl_img{
+                width: 24px;
+                height: 24px;
+                margin-right: 8px;
+                border-radius: 50%;
+            }
+            .person_onl_add{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #efeff5;
+                ion-icon{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .chat-box{
+        padding: 0 20px;
+        position: relative;
+        .header{
+            height: 60px;
+            min-width: 150px;
+            padding: 0 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.1);
+            .header-room{
+                .room-img{
+                    height: 40px;
+                    width: 40px;
+                    background-image: url('../img/roomavt.png');
+                    background-size: cover;
+                    margin-right: 10px;
+                }
+            }
+            .header-action{
+                ion-icon{
+                    color: #c5c5d6;
+                    border-radius: 50%;
+                    padding: 8px 8px;
+                    background-color: #f4f4fa;
+                    margin-left: 10px;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: #c5c5d6;
+                        color: #adadbd
+                    }
+                }
+            }
+        }
+        .chat-form{
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            .chat-input{
+                width: 100%;
+                height: 40px;
+                padding-left: 10px;
+                border: 1px solid #e1e4eb;
+                border-radius: 30px;
+                outline: none;
+                &::placeholder{
+                    font-size: 14px;
+                    font-weight: 200;
+                    color: #4b4b9d;
+                }
+            }
+            .chat-send{
+                border: none;
+                border-radius: 50%;
+                transform: translateX(-12px);
+                ion-icon{
+                    color: #4849a1;
+                    padding: 12px 12px 4px;
+                    opacity: 0.8;
+                    cursor: pointer;
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+                
+            }
+        }
+        .messages-area{
+            padding: 0 36px;
+            max-height: 500px;
+            overflow-y: scroll;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
+
+    //end
+}

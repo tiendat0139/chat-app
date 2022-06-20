@@ -1,0 +1,36 @@
+.backgr-blue{
+    background-color: #4b4b9d;
+    color: #fff;
+}
+.backgr-dark{
+    background-color: #e4e6eb;
+}
+.messContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.send-text{
+    margin: 0 16px;
+    width: 100%;
+    color: #666;
+    font-size: 12px;
+}
+.messageBox{
+    display: inline-block;
+    max-width: 60%;
+    padding: 8px 16px;
+    border-radius: 16px;
+}
+.messageText{
+    margin: 0;   
+}
+.justifyEnd{
+    justify-content: flex-end;
+    .send-text{
+        text-align: right;
+    }
+}
+.justifyStart{
+    justify-content: flex-start;
+}
