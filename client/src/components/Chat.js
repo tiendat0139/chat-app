@@ -16,28 +16,28 @@ const Chat = () => {
     const bottomRef = useRef(null)
     const [searchParams] = useSearchParams();
     const [name, setName] = useState('')
-    const [room, setRoom] = useState('')
+    const [roomId, setRoomId] = useState('')
     const [message, setMessage] = useState()
     const [messages, setMessages] = useState([])
     const [users, setUsers] = useState([])
 
     useEffect(() => {
         setName(searchParams.get('name'))
-        setRoom(searchParams.get('room'))
+        setRoomId(searchParams.get('roomid'))
         socket = io(ENDPOINT,{
             withCredentials: true,
             extraHeaders: {
                 "my-custom-header" : "abcd" 
             }
         })
-        socket.emit('join',{name, room}, (error) => {
+        socket.emit('join',{name, roomId}, (error) => {
            if(error) alert(error)
         })
         return () => {
             socket.disconnect();
             socket.off()
         }   
-    },[name, room, ENDPOINT, searchParams]);
+    },[name, roomId, ENDPOINT, searchParams]);
     
     useEffect(() => {
         socket.on('message',  (message) => {
@@ -93,7 +93,7 @@ const Chat = () => {
                         <div className="header-room d-flex">
                             <div className="room-img"></div>
                             <div className="room-name d-flex flex-column justify-content-center">
-                                <span style={{'fontWeight':'600'}}>{room}</span>
+                                <span style={{'fontWeight':'600'}}>{roomId}</span>
                                 <span style={{'fontSize':'12px', 'fontWeight':'400', color:'#666'}}>Active Now</span>
                             </div>
                         </div>

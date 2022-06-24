@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Create from './components/Create'
 import Join from './components/Join'
 import Chat  from './components/Chat';
 import axios from 'axios';
@@ -15,6 +16,7 @@ function App() {
         <div className="app">
           <Routes>
             <Route path='/' element={<Join />}/>
+            <Route path='/create-room' element={<Create />}/>
             <Route path='/chat' element={<Chat />}/>
 
           </Routes>

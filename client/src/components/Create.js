@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom'
 import '../assets/css/join.scss'
 
-const Create = () => {
+const Join = () => {
     const [name, setName] = useState()
-    const [roomId, setRoomId] = useState()
+    const [room, setRoom] = useState()
     return (
         <div className="join-page">
             <div className="join-form">
@@ -13,17 +13,17 @@ const Create = () => {
                <input className="input" name="name" placeholder="Enter name" value={name || ''}
                     onChange={(e) => setName(e.target.value)}
                />
-               <input className="input" name="name" placeholder="Enter roomID" value={roomId || ''}
-                    onChange={(e) => setRoomId(e.target.value)}
+               <input className="input" name="name" placeholder="Enter roomID" value={room || ''}
+                    onChange={(e) => setRoom(e.target.value)}
                />
-                <Link onClick={(e) => (!name || !roomId)? e.preventDefault() : null} to={`/chat?name=${name}&roomid=${roomId}`} 
+                <Link onClick={(e) => (!name || !room)? e.preventDefault() : null} to={`/chat?name=${name}&room=${room}`} 
                     className='join-btn active'>
-                    Join room
+                    Create room
                 </Link>
-                <Link  to={'/join-room'} className='join-btn'> Create room </Link>
+                <Link  to={'/join-room'} className='join-btn'> Join room </Link>
             </div>
         </div>
 
     )
 }
-export default Create
+export default Join

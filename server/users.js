@@ -4,14 +4,14 @@ const users = [];
 //add user to room
 //every user connect, will has a id
 
-const addUsers = ({id,name,room}) => {
+const addUsers = ({id,name,roomId}) => {
     name = name.trim().toLowerCase()
-    room = room.trim().toLowerCase()
-    if(!name || !room) return {error: 'Username and room required. '}
-    const existtingUser = users.find((user) =>  user.name === name && user.room === room)
+    roomId = roomId.trim().toLowerCase()
+    if(!name || !roomId) return {error: 'Username and room required. '}
+    const existtingUser = users.find((user) =>  user.name === name && user.roomId === roomId)
     if(existtingUser) return {error: 'User is taken'}
     
-    const user = {id, name, room};
+    const user = {id, name, roomId};
     users.push(user)
     console.log(users)
     return { user }
@@ -20,9 +20,9 @@ const addUsers = ({id,name,room}) => {
 //remove user from room
 const removeUsers = (id) => {
     const index = users.findIndex((user) => user.id === id);
-    if(index){
+    if(index > -1){
         //remove user and return this user
-        return users.splice(index,1)[0];
+        return users.splice(index,1)[0]
     }
 }
 
